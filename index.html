@@ -1,58 +1,261 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Abhishek Potdar | Radio Astronomy</title>
+
 <style>
+
 body{
-font-family: Arial;
-margin:40px;
-background:#0c0c1d;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+background-image:url("images/radio_galaxy.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.72);
+z-index:-1;
+}
+
+header{
+text-align:center;
+padding:40px;
+background:rgba(0,0,0,0.6);
+}
+
+header h1{
+font-size:42px;
+color:#60a5fa;
+}
+
+nav{
+text-align:center;
+background:rgba(0,0,0,0.85);
+padding:15px;
+}
+
+nav a{
+color:#60a5fa;
+margin:20px;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+}
+
+nav a:hover{
 color:white;
 }
 
-h1{color:#4fc3f7;}
-
-.section{
-margin-top:40px;
+section{
+max-width:1100px;
+margin:auto;
+padding:60px 30px;
 }
 
-a{color:#4fc3f7;}
+h2{
+color:#60a5fa;
+}
+
+.project{
+background:rgba(0,0,0,0.65);
+padding:25px;
+margin-top:25px;
+border-radius:10px;
+}
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.gallery img{
+width:300px;
+margin:10px;
+border-radius:8px;
+}
+
+.button{
+background:#2563eb;
+padding:12px 25px;
+color:white;
+text-decoration:none;
+border-radius:6px;
+}
+
+footer{
+text-align:center;
+background:rgba(0,0,0,0.8);
+padding:25px;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<h1>Abhishek Potdar</h1>
-<p>Physics Researcher | Radio Astronomy | Instrumentation</p>
+<header>
 
-<div class="section">
+<h1>Abhishek Potdar</h1>
+<p>Radio Astronomy | Astrophysical Instrumentation</p>
+
+</header>
+
+<nav>
+
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#projects">Projects</a>
+<a href="#spectrum">HI Spectrum</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<section id="about">
+
 <h2>About Me</h2>
+
 <p>
-I work on radio astronomy instrumentation including a 3-meter
-automated 21-cm radio telescope and solar radio burst analysis.
+I work in radio astronomy instrumentation and astrophysical data analysis.
+My research includes building a 3-meter automated radio telescope
+for observing the 21-cm hydrogen line and studying solar radio bursts
+associated with solar flares.
+</p>
+
+</section>
+
+<section id="research">
+
+<h2>Research</h2>
+
+<div class="project">
+<h3>Solar Radio Burst Analysis</h3>
+<p>
+Statistical study of the temporal association between solar flares
+and radio bursts (Type II and Type III).
 </p>
 </div>
 
-<div class="section">
+<div class="project">
+<h3>HI 21-cm Galactic Observations</h3>
+<p>
+Observation of neutral hydrogen emission at 1420 MHz using
+a custom-built radio telescope.
+</p>
+</div>
+
+</section>
+
+<section id="projects">
+
 <h2>Projects</h2>
 
-<ul>
-<li>3-m Hydrogen Line Radio Telescope (1.42 GHz)</li>
-<li>Solar Radio Burst Statistical Analysis</li>
-<li>Dipole & Feedhorn Design</li>
-<li>RTL-SDR Signal Processing</li>
-</ul>
+<div class="project">
+<h3>3-Meter Radio Telescope</h3>
+<p>
+Development of a complete radio astronomy instrument including
+dish antenna, feedhorn, LNA, bandpass filter, and SDR receiver.
+</p>
+</div>
+
+<div class="project">
+<h3>Antenna & Feedhorn Design</h3>
+<p>
+Simulation of dipole feeds, cylindrical waveguide feedhorns,
+and choke-ring antennas.
+</p>
+</div>
+
+</section>
+
+<section id="spectrum">
+
+<h2>HI 21-cm Spectrum</h2>
+
+<p>Example spectrum from the hydrogen line observation.</p>
+
+<div id="plot"></div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<script>
+
+var freq = [1419.9,1420.0,1420.1,1420.2,1420.3];
+var power = [-95,-90,-82,-88,-94];
+
+var trace = {
+x: freq,
+y: power,
+mode: 'lines',
+line: {width:3}
+};
+
+var layout = {
+title: "Neutral Hydrogen Spectrum",
+xaxis: {title: "Frequency (MHz)"},
+yaxis: {title: "Power (dB)"},
+paper_bgcolor: "rgba(0,0,0,0)",
+plot_bgcolor: "rgba(0,0,0,0)",
+font: {color: "white"}
+};
+
+Plotly.newPlot('plot', [trace], layout);
+
+</script>
+
+</section>
+
+<section id="gallery">
+
+<h2>Telescope Gallery</h2>
+
+<div class="gallery">
+
+<img src="images/telescope1.jpg">
+<img src="images/telescope2.jpg">
+<img src="images/spectrum.jpg">
 
 </div>
 
-<div class="section">
-<h2>GitHub</h2>
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>Email: your_email_here</p>
 
 <p>
-<a href="https://github.com/yourusername">My GitHub Repository</a>
+GitHub:
+<a href="https://github.com/Abhishek_Potdar_03">
+github.com/Abhishek_Potdar_03
+</a>
 </p>
 
-</div>
+<a class="button" href="Abhishek_Potdar_CV.pdf">
+Download CV
+</a>
+
+</section>
+
+<footer>
+
+<p>© 2026 Abhishek Potdar | Radio Astronomy</p>
+
+</footer>
 
 </body>
+
 </html>
