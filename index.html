@@ -1,102 +1,107 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 
 <head>
-<title>Abhishek Potdar | Astronomy and Astrophysics</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Abhishek Potdar | Radio Astronomy</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
+background:#000;
 color:white;
-background-image:url("images/radio_galaxy.jpg");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+line-height:1.6;
 }
 
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.72);
-z-index:-1;
-}
+/* HEADER */
 
 header{
 text-align:center;
-padding:40px;
-background:rgba(0,0,0,0.6);
+padding:80px 20px;
+background:#000;
 }
 
 header h1{
-font-size:42px;
-color:#60a5fa;
+font-size:3em;
+margin-bottom:10px;
 }
+
+header p{
+font-size:1.2em;
+color:#bbbbbb;
+}
+
+/* NAVIGATION */
 
 nav{
 text-align:center;
-background:rgba(0,0,0,0.85);
 padding:15px;
+background:#111;
+position:sticky;
+top:0;
 }
 
 nav a{
-color:#60a5fa;
-margin:20px;
+margin:0 20px;
+color:white;
 text-decoration:none;
-font-size:18px;
 font-weight:bold;
 }
 
 nav a:hover{
-color:white;
+color:#4fc3f7;
 }
 
+/* SECTIONS */
+
 section{
-max-width:1100px;
+max-width:900px;
 margin:auto;
-padding:60px 30px;
+padding:60px 20px;
 }
 
 h2{
-color:#60a5fa;
+border-bottom:2px solid #444;
+padding-bottom:10px;
 }
+
+/* PROJECT BOX */
 
 .project{
-background:rgba(0,0,0,0.65);
-padding:25px;
-margin-top:25px;
-border-radius:10px;
-}
-
-.gallery{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.gallery img{
-width:300px;
-margin:10px;
-border-radius:8px;
-}
-
-.button{
-background:#2563eb;
-padding:12px 25px;
-color:white;
-text-decoration:none;
+background:#111;
+padding:20px;
+margin-top:20px;
 border-radius:6px;
 }
 
+/* BUTTON */
+
+.button{
+display:inline-block;
+background:#4fc3f7;
+color:black;
+padding:10px 20px;
+border-radius:5px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.button:hover{
+background:#81d4fa;
+}
+
+/* FOOTER */
+
 footer{
 text-align:center;
-background:rgba(0,0,0,0.8);
-padding:25px;
+padding:30px;
+color:#777;
 }
 
 </style>
@@ -108,53 +113,55 @@ padding:25px;
 <header>
 
 <h1>Abhishek Potdar</h1>
-<p>Radio Astrophysics | Astronomical Instrumentation</p>
+
+<p>
+Radio Astronomy • Solar Physics • Scientific Instrumentation
+</p>
 
 </header>
 
 <nav>
 
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#projects">Projects</a>
-<a href="#spectrum">HI Spectrum</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+<a href="#about">About</a> <a href="#research">Research</a> <a href="#projects">Projects</a> <a href="#publications">Publications</a> <a href="#contact">Contact</a>
 
 </nav>
 
 <section id="about">
 
-<h2>About Me</h2>
+<h2>About</h2>
 
 <p>
-I work in radio astronomy instrumentation and astrophysical data analysis.
-My research includes building a 3-meter automated radio telescope
-for observing the 21-cm hydrogen line and studying solar radio bursts
-associated with solar flares.
+
+I am a physics researcher working in radio astronomy and solar physics.
+My research focuses on solar radio bursts, flare energetics, and radio
+instrumentation.
+
+</p>
+
+<p>
+
+I developed a 3-meter automated radio telescope operating at
+1420 MHz for hydrogen line observations.
+
 </p>
 
 </section>
 
 <section id="research">
 
-<h2>Research</h2>
+<h2>Research Interests</h2>
 
-<div class="project">
-<h3>Solar Radio Burst Analysis</h3>
-<p>
-Statistical study of the temporal association between solar flares
-and radio bursts (Type II and Type III).
-</p>
-</div>
+<ul>
 
-<div class="project">
-<h3>HI 21-cm Galactic Observations</h3>
-<p>
-Observation of neutral hydrogen emission at 1420 MHz using
-a custom-built radio telescope.
-</p>
-</div>
+<li>Solar radio bursts (Type II and Type III)</li>
+
+<li>Solar flare timing and radio emission</li>
+
+<li>Radio telescope instrumentation</li>
+
+<li>Hydrogen 21-cm observations</li>
+
+</ul>
 
 </section>
 
@@ -163,71 +170,50 @@ a custom-built radio telescope.
 <h2>Projects</h2>
 
 <div class="project">
+
 <h3>3-Meter Radio Telescope</h3>
+
 <p>
-Development of a complete radio astronomy instrument including
-dish antenna, feedhorn, LNA, bandpass filter, and SDR receiver.
+
+Design and development of a 3-meter automated radio telescope
+operating at 1.42 GHz using SDR-based spectrometer.
+
 </p>
+
 </div>
 
 <div class="project">
-<h3>Antenna & Feedhorn Design</h3>
+
+<h3>Solar Radio Burst Analysis</h3>
+
 <p>
-Simulation of dipole feeds, cylindrical waveguide feedhorns,
-and choke-ring antennas.
+
+Statistical study of the temporal association between solar flares
+and radio bursts including Type II and Type III bursts.
+
 </p>
+
 </div>
 
 </section>
 
-<section id="spectrum">
+<section id="publications">
 
-<h2>HI 21-cm Spectrum</h2>
+<h2>Publications</h2>
 
-<p>Example spectrum from the hydrogen line observation.</p>
+<p>
 
-<div id="plot"></div>
+Potdar, A. (2026)
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<br>
 
-<script>
+<b>Temporal Association of Solar Radio Bursts with Solar Flares</b>
 
-var freq = [1419.9,1420.0,1420.1,1420.2,1420.3];
-var power = [-95,-90,-82,-88,-94];
+<br>
 
-var trace = {
-x: freq,
-y: power,
-mode: 'lines',
-line: {width:3}
-};
+Submitted to journal.
 
-var layout = {
-title: "Neutral Hydrogen Spectrum",
-xaxis: {title: "Frequency (MHz)"},
-yaxis: {title: "Power (dB)"},
-paper_bgcolor: "rgba(0,0,0,0)",
-plot_bgcolor: "rgba(0,0,0,0)",
-font: {color: "white"}
-};
-
-Plotly.newPlot('plot', [trace], layout);
-
-</script>
-
-</section>
-
-<section id="gallery">
-
-<h2>Telescope Gallery</h2>
-
-<div class="gallery">
-
-<img src="images/telescope1.jpg">
-<img src="images/telescope2.jpg">
-<img src="images/spectrum.jpg">
-
-</div>
+</p>
 
 </section>
 
@@ -235,24 +221,39 @@ Plotly.newPlot('plot', [trace], layout);
 
 <h2>Contact</h2>
 
-<p>Email: your_email_here</p>
-
 <p>
-GitHub:
-<a href="https://github.com/Abhishek_Potdar_03">
-github.com/Abhishek_Potdar_03
-</a>
+
+Email: [your_email@example.com](mailto:your_email@example.com)
+
 </p>
 
-<a class="button" href="Abhishek_Potdar_CV.pdf">
-Download CV
+<p>
+
+<a class="button" href="CV.pdf">Download CV</a>
+
+</p>
+
+<p>
+
+GitHub:
+
+<br>
+
+<a href="https://github.com/Abhishek_Potdar_03" target="_blank">
+
+github.com/Abhishek_Potdar_03
+
 </a>
+
+</p>
 
 </section>
 
 <footer>
 
-<p>© 2026 Abhishek Potdar | Radio Astronomy</p>
+<p>
+© 2026 Abhishek Potdar
+</p>
 
 </footer>
 
