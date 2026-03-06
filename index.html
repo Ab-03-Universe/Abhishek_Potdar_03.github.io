@@ -16,9 +16,10 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:black;
 color:white;
+overflow-x:hidden;
 }
 
-/* RADIO GALAXY BACKGROUND */
+/* GALAXY BACKGROUND */
 
 canvas{
 position:fixed;
@@ -42,7 +43,6 @@ margin:0;
 header p{
 color:#bbbbbb;
 font-size:1.3em;
-margin-top:10px;
 }
 
 /* NAVIGATION */
@@ -82,7 +82,7 @@ padding-bottom:10px;
 
 /* PROJECT CARDS */
 
-.project-grid{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
@@ -97,7 +97,7 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 background:#1a1a1a;
 }
 
@@ -137,9 +137,7 @@ color:#777;
 
 <h1>Abhishek Potdar</h1>
 
-<p>
-Radio Astronomy • Solar Physics • Scientific Instrumentation
-</p>
+<p>Radio Astronomy • Solar Physics • Scientific Instrumentation</p>
 
 </header>
 
@@ -157,14 +155,14 @@ Radio Astronomy • Solar Physics • Scientific Instrumentation
 
 I am a physics researcher working in radio astronomy and solar physics.
 My research focuses on solar radio bursts, flare energetics,
-and radio astronomy instrumentation.
+and development of radio astronomy instrumentation.
 
 </p>
 
 <p>
 
-I developed a <b>3-meter automated radio telescope</b>
-operating at 1420 MHz for neutral hydrogen observations.
+I developed a <b>3-meter automated radio telescope</b> operating at
+1420 MHz for neutral hydrogen observations.
 
 </p>
 
@@ -178,8 +176,8 @@ operating at 1420 MHz for neutral hydrogen observations.
 
 <li>Solar radio bursts (Type II and Type III)</li>
 <li>Solar flare timing and energetics</li>
-<li>Radio instrumentation and receivers</li>
-<li>Neutral hydrogen 21-cm observations</li>
+<li>Radio telescope instrumentation</li>
+<li>Hydrogen 21-cm observations</li>
 
 </ul>
 
@@ -189,7 +187,7 @@ operating at 1420 MHz for neutral hydrogen observations.
 
 <h2>Projects</h2>
 
-<div class="project-grid">
+<div class="grid">
 
 <div class="card">
 
@@ -197,8 +195,8 @@ operating at 1420 MHz for neutral hydrogen observations.
 
 <p>
 
-Development of an automated 3-meter parabolic radio telescope
-operating at 1.42 GHz using an SDR spectrometer.
+Design and development of an automated 3-meter
+radio telescope operating at 1.42 GHz using SDR spectrometer.
 
 </p>
 
@@ -210,7 +208,7 @@ operating at 1.42 GHz using an SDR spectrometer.
 
 <p>
 
-Statistical analysis of temporal association between
+Statistical study of temporal association between
 solar flares and radio bursts.
 
 </p>
@@ -223,8 +221,8 @@ solar flares and radio bursts.
 
 <p>
 
-Simulation and development of VE4MA feedhorn and choke-ring
-structures for radio astronomy receivers.
+Design and simulation of VE4MA feedhorn
+and choke-ring structures for radio astronomy receivers.
 
 </p>
 
@@ -248,7 +246,7 @@ Potdar, A. (2026)
 
 <br>
 
-Submitted to Solar Physics Journal.
+Submitted to Solar Physics.
 
 </p>
 
@@ -284,54 +282,75 @@ github.com/Abhishek_Potdar_03
 
 <footer>
 
-<p>
-© 2026 Abhishek Potdar
-</p>
+<p>© 2026 Abhishek Potdar</p>
 
 </footer>
 
 <script>
 
-/* SPIRAL RADIO GALAXY ANIMATION */
+/* SPIRAL GALAXY ANIMATION */
 
 const canvas = document.getElementById("galaxy");
 const ctx = canvas.getContext("2d");
 
+function resize(){
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+}
 
-let stars = [];
-let arms = 4;
-let totalStars = 2000;
+resize();
+window.addEventListener("resize",resize);
+
+let stars=[];
+let arms=4;
+let totalStars=2000;
 
 for(let i=0;i<totalStars;i++){
 
-let radius = Math.random()*500;
-let angle = Math.random()*Math.PI*2;
-let armOffset = (i%arms)*(Math.PI*2/arms);
+let radius=Math.random()*500;
+let angle=Math.random()*Math.PI*2;
+let armOffset=(i%arms)*(Math.PI*2/arms);
 
 stars.push({
 r:radius,
 angle:angle+armOffset,
-speed:0.0004+Math.random()*0.0006,
-size:Math.random()*2
+speed:0.0003+Math.random()*0.0006,
+size:Math.random()*1.8
 });
 
 }
 
-function drawGalaxy(){
+function draw(){
 
 ctx.fillStyle="black";
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
-let cx = canvas.width/2;
-let cy = canvas.height/2;
+let cx=canvas.width/2;
+let cy=canvas.height/2;
 
 ctx.fillStyle="white";
 
 stars.forEach(star=>{
 
-star.angle += star.speed;
+star.angle+=star.speed;
 
-let x = cx + star.r*Math.cos(star.angle);
-let y = cy + star.r*Math.sin(s*
+let x=cx+star.r*Math.cos(star.angle);
+let y=cy+star.r*Math.sin(star.angle);
+
+ctx.beginPath();
+ctx.arc(x,y,star.size,0,Math.PI*2);
+ctx.fill();
+
+});
+
+requestAnimationFrame(draw);
+
+}
+
+draw();
+
+</script>
+
+</body>
+
+</html>
