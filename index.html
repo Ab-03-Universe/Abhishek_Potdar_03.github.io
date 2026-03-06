@@ -14,17 +14,51 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:black;
 color:white;
+background:black;
 overflow-x:hidden;
 }
 
-/* GALAXY BACKGROUND */
+/* RADIO GALAXY BACKGROUND */
 
-canvas{
+body::before{
+content:"";
 position:fixed;
 top:0;
 left:0;
+width:100%;
+height:100%;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/2/21/Cygnus_A_radio.jpg");
+background-size:cover;
+background-position:center;
+z-index:-2;
+animation:zoomGalaxy 60s infinite alternate linear;
+opacity:0.35;
+}
+
+@keyframes zoomGalaxy{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.2);
+}
+
+}
+
+/* DARK OVERLAY */
+
+body::after{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+opacity:0.6;
 z-index:-1;
 }
 
@@ -32,17 +66,18 @@ z-index:-1;
 
 header{
 text-align:center;
-padding:100px 20px;
+padding:110px 20px;
 }
 
 header h1{
-font-size:3.5em;
+font-size:3.8em;
 margin:0;
+letter-spacing:1px;
 }
 
 header p{
-color:#bbbbbb;
 font-size:1.3em;
+color:#cccccc;
 }
 
 /* NAVIGATION */
@@ -80,7 +115,7 @@ border-bottom:2px solid #333;
 padding-bottom:10px;
 }
 
-/* PROJECT CARDS */
+/* PROJECT GRID */
 
 .grid{
 display:grid;
@@ -97,7 +132,7 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-7px);
 background:#1a1a1a;
 }
 
@@ -131,13 +166,13 @@ color:#777;
 
 <body>
 
-<canvas id="galaxy"></canvas>
-
 <header>
 
 <h1>Abhishek Potdar</h1>
 
-<p>Radio Astronomy • Solar Physics • Scientific Instrumentation</p>
+<p>
+Radio Astronomy • Solar Physics • Scientific Instrumentation
+</p>
 
 </header>
 
@@ -155,14 +190,14 @@ color:#777;
 
 I am a physics researcher working in radio astronomy and solar physics.
 My research focuses on solar radio bursts, flare energetics,
-and development of radio astronomy instrumentation.
+and the development of radio astronomy instrumentation.
 
 </p>
 
 <p>
 
-I developed a <b>3-meter automated radio telescope</b> operating at
-1420 MHz for neutral hydrogen observations.
+I developed a <b>3-meter automated radio telescope</b>
+operating at 1420 MHz for neutral hydrogen observations.
 
 </p>
 
@@ -195,7 +230,7 @@ I developed a <b>3-meter automated radio telescope</b> operating at
 
 <p>
 
-Design and development of an automated 3-meter
+Design and development of an automated 3-meter parabolic
 radio telescope operating at 1.42 GHz using SDR spectrometer.
 
 </p>
@@ -208,7 +243,7 @@ radio telescope operating at 1.42 GHz using SDR spectrometer.
 
 <p>
 
-Statistical study of temporal association between
+Statistical analysis of temporal association between
 solar flares and radio bursts.
 
 </p>
@@ -221,7 +256,7 @@ solar flares and radio bursts.
 
 <p>
 
-Design and simulation of VE4MA feedhorn
+Simulation and development of VE4MA feedhorn
 and choke-ring structures for radio astronomy receivers.
 
 </p>
@@ -271,9 +306,7 @@ GitHub
 <br>
 
 <a href="https://github.com/Abhishek_Potdar_03" target="_blank">
-
 github.com/Abhishek_Potdar_03
-
 </a>
 
 </p>
@@ -285,71 +318,6 @@ github.com/Abhishek_Potdar_03
 <p>© 2026 Abhishek Potdar</p>
 
 </footer>
-
-<script>
-
-/* SPIRAL GALAXY ANIMATION */
-
-const canvas = document.getElementById("galaxy");
-const ctx = canvas.getContext("2d");
-
-function resize(){
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-}
-
-resize();
-window.addEventListener("resize",resize);
-
-let stars=[];
-let arms=4;
-let totalStars=2000;
-
-for(let i=0;i<totalStars;i++){
-
-let radius=Math.random()*500;
-let angle=Math.random()*Math.PI*2;
-let armOffset=(i%arms)*(Math.PI*2/arms);
-
-stars.push({
-r:radius,
-angle:angle+armOffset,
-speed:0.0003+Math.random()*0.0006,
-size:Math.random()*1.8
-});
-
-}
-
-function draw(){
-
-ctx.fillStyle="black";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
-let cx=canvas.width/2;
-let cy=canvas.height/2;
-
-ctx.fillStyle="white";
-
-stars.forEach(star=>{
-
-star.angle+=star.speed;
-
-let x=cx+star.r*Math.cos(star.angle);
-let y=cy+star.r*Math.sin(star.angle);
-
-ctx.beginPath();
-ctx.arc(x,y,star.size,0,Math.PI*2);
-ctx.fill();
-
-});
-
-requestAnimationFrame(draw);
-
-}
-
-draw();
-
-</script>
 
 </body>
 
