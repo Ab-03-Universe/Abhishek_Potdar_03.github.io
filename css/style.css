@@ -1,17 +1,4 @@
 body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:#07111f;
-color:#f4f7fb;
-line-height:1.8;
-}
-
-nav{
-position:sticky;
-top:0;
-background:rgba(7,17,31,0.92);
-padding:18px 8%;
-display:flex;
 justify-content:space-between;
 align-items:center;
 backdrop-filter:blur(10px);
@@ -64,4 +51,29 @@ margin-bottom:25px;
 width:100%;
 max-width:360px;
 border-radius:20px;
+}
+
+.page-section{
+padding:100px 8%;
+}
+
+.page-title{
+font-size:2.4rem;
+margin-bottom:40px;
+color:#64cfff;
+}
+
+.research-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.research-card,
+.content-box{
+background:rgba(255,255,255,0.03);
+padding:30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+transition:0.3s;
 }
