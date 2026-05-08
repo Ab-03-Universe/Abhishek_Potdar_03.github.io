@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Abhishek Potdar | Radio Astronomy</title>
+<title>Abhishek Potdar | Radio Astronomy Research</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,13 +21,14 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Inter',sans-serif;
-background:#050816;
-color:white;
+background:#07111f;
+color:#f5f7fa;
+line-height:1.8;
 overflow-x:hidden;
 }
 
 /* =========================
-BACKGROUND CANVAS
+BACKGROUND
 ========================= */
 
 canvas{
@@ -37,18 +38,21 @@ left:0;
 z-index:-2;
 }
 
-/* Gradient Overlay */
-
-.overlay{
+.bg-overlay{
 position:fixed;
 width:100%;
 height:100%;
+
 background:
-radial-gradient(circle at center,
-rgba(0,217,255,0.08),
-transparent 60%);
+radial-gradient(circle at top right,
+rgba(0,180,255,0.08),
+transparent 35%),
+
+radial-gradient(circle at bottom left,
+rgba(0,180,255,0.05),
+transparent 30%);
+
 z-index:-1;
-pointer-events:none;
 }
 
 /* =========================
@@ -57,65 +61,43 @@ NAVBAR
 
 nav{
 position:fixed;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-width:85%;
-padding:18px 40px;
-
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-border-radius:20px;
-
+top:0;
+width:100%;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+
+background:rgba(7,17,31,0.7);
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,0.08);
 
 z-index:1000;
 }
 
 .logo{
-font-family:'Orbitron',sans-serif;
 font-size:1.2rem;
 font-weight:700;
-color:#00d9ff;
-letter-spacing:2px;
+letter-spacing:1px;
+color:#5cc8ff;
 }
 
 nav ul{
 display:flex;
+gap:35px;
 list-style:none;
-gap:30px;
 }
 
 nav a{
 text-decoration:none;
-color:white;
+color:#dbe4ee;
 font-weight:500;
-position:relative;
-transition:0.3s;
-}
-
-nav a::after{
-content:'';
-position:absolute;
-width:0%;
-height:2px;
-left:0;
-bottom:-6px;
-background:#00d9ff;
 transition:0.3s;
 }
 
 nav a:hover{
-color:#00d9ff;
-}
-
-nav a:hover::after{
-width:100%;
+color:#5cc8ff;
 }
 
 /* =========================
@@ -123,88 +105,103 @@ HERO SECTION
 ========================= */
 
 .hero{
-height:100vh;
 
-display:flex;
-flex-direction:column;
-justify-content:center;
+min-height:100vh;
+
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
 align-items:center;
 
-text-align:center;
-padding:20px;
-position:relative;
+padding:120px 8% 80px;
+gap:50px;
 }
 
-.hero h1{
-font-family:'Orbitron',sans-serif;
-font-size:5rem;
-font-weight:800;
+.hero-text h1{
 
-background:linear-gradient(
-90deg,
-#00d9ff,
-#7b61ff,
-#00d9ff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-background-size:300%;
-
-animation:gradientMove 8s infinite linear;
-
-text-shadow:
-0 0 20px rgba(0,217,255,0.4);
-
+font-size:4rem;
+font-weight:700;
 margin-bottom:20px;
+line-height:1.1;
 }
 
-@keyframes gradientMove{
-0%{background-position:0%}
-100%{background-position:300%}
-}
+.hero-text h2{
 
-.typing{
 font-size:1.3rem;
-color:#d1d5db;
-margin-bottom:40px;
-letter-spacing:2px;
+font-weight:400;
+color:#5cc8ff;
+
+margin-bottom:25px;
 }
 
-.hero-buttons{
+.hero-text p{
+
+font-size:1.08rem;
+color:#c4d0dc;
+
+max-width:650px;
+margin-bottom:40px;
+}
+
+.buttons{
 display:flex;
 gap:20px;
 }
 
 .btn{
+
 padding:14px 28px;
-border-radius:12px;
+border-radius:8px;
+
 text-decoration:none;
 font-weight:600;
+
 transition:0.3s;
 }
 
 .primary{
-background:#00d9ff;
-color:black;
+
+background:#5cc8ff;
+color:#07111f;
 }
 
 .primary:hover{
-transform:translateY(-4px);
-box-shadow:0 0 30px rgba(0,217,255,0.4);
+
+transform:translateY(-3px);
+box-shadow:0 0 25px rgba(92,200,255,0.25);
 }
 
 .secondary{
-border:1px solid rgba(255,255,255,0.2);
-background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.15);
 color:white;
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.03);
 }
 
 .secondary:hover{
-background:rgba(255,255,255,0.1);
-transform:translateY(-4px);
+
+background:rgba(255,255,255,0.08);
+}
+
+/* HERO IMAGE */
+
+.hero-image{
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-image img{
+
+width:100%;
+max-width:480px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 0 50px rgba(0,0,0,0.4);
 }
 
 /* =========================
@@ -212,80 +209,117 @@ SECTIONS
 ========================= */
 
 section{
-max-width:1200px;
-margin:auto;
-padding:120px 40px;
+
+padding:100px 8%;
 }
 
 .section-title{
-font-family:'Orbitron',sans-serif;
-font-size:2.5rem;
-margin-bottom:50px;
-color:#00d9ff;
+
+font-size:2rem;
+margin-bottom:40px;
+color:#5cc8ff;
+font-weight:600;
 }
 
 /* =========================
-GLASS CARDS
+ABOUT
 ========================= */
 
-.grid{
+.about-box{
+
+background:rgba(255,255,255,0.03);
+
+padding:40px;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,0.06);
+}
+
+/* =========================
+RESEARCH INTERESTS
+========================= */
+
+.interests{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+}
+
+.interest-card{
+
+background:rgba(255,255,255,0.03);
+
+padding:28px;
+
+border-radius:14px;
+
+border:1px solid rgba(255,255,255,0.06);
+
+transition:0.3s;
+}
+
+.interest-card:hover{
+
+transform:translateY(-5px);
+
+border-color:rgba(92,200,255,0.35);
+}
+
+.interest-card h3{
+
+margin-bottom:15px;
+color:#5cc8ff;
+}
+
+/* =========================
+PROJECTS
+========================= */
+
+.projects{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
 gap:30px;
 }
 
-.card{
-padding:30px;
+.project-card{
 
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.03);
 
-border:1px solid rgba(255,255,255,0.08);
+border-radius:16px;
 
-backdrop-filter:blur(14px);
-
-border-radius:24px;
-
-transition:0.4s;
-
-position:relative;
 overflow:hidden;
+
+border:1px solid rgba(255,255,255,0.06);
+
+transition:0.35s;
 }
 
-.card::before{
-content:'';
-position:absolute;
-top:-100%;
-left:-100%;
+.project-card:hover{
 
-width:200%;
-height:200%;
-
-background:
-linear-gradient(
-45deg,
-transparent,
-rgba(255,255,255,0.05),
-transparent
-);
-
-transform:rotate(25deg);
-transition:0.8s;
+transform:translateY(-8px);
 }
 
-.card:hover::before{
-top:100%;
-left:100%;
+.project-card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:
-0 0 40px rgba(0,217,255,0.15);
+.project-content{
+
+padding:25px;
 }
 
-.card h3{
+.project-content h3{
+
 margin-bottom:15px;
-color:#00d9ff;
+color:#5cc8ff;
 }
 
 /* =========================
@@ -293,42 +327,80 @@ TIMELINE
 ========================= */
 
 .timeline{
-border-left:2px solid rgba(255,255,255,0.2);
-padding-left:30px;
+
+border-left:2px solid rgba(255,255,255,0.12);
+
+padding-left:35px;
+
 display:flex;
 flex-direction:column;
 gap:40px;
 }
 
 .timeline-item{
+
 position:relative;
 }
 
 .timeline-item::before{
+
 content:'';
+
 position:absolute;
-left:-39px;
-top:5px;
+
+left:-43px;
+top:6px;
+
 width:14px;
 height:14px;
+
+background:#5cc8ff;
+
 border-radius:50%;
-background:#00d9ff;
-box-shadow:0 0 20px #00d9ff;
+}
+
+/* =========================
+PUBLICATIONS
+========================= */
+
+.pub-list{
+
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.pub{
+
+padding:25px;
+
+background:rgba(255,255,255,0.03);
+
+border-radius:14px;
+
+border:1px solid rgba(255,255,255,0.06);
 }
 
 /* =========================
 CONTACT
 ========================= */
 
-.contact-box{
+.contact{
+
 text-align:center;
-padding:50px;
 
-background:rgba(255,255,255,0.04);
+background:rgba(255,255,255,0.03);
 
-border-radius:24px;
+padding:60px;
 
-border:1px solid rgba(255,255,255,0.08);
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,0.06);
+}
+
+.contact p{
+
+margin-bottom:20px;
 }
 
 /* =========================
@@ -336,22 +408,28 @@ FOOTER
 ========================= */
 
 footer{
+
 text-align:center;
+
 padding:40px;
-color:#888;
+
+color:#8da0b3;
 }
 
 /* =========================
-SCROLL REVEAL
+SCROLL ANIMATION
 ========================= */
 
 .hidden{
+
 opacity:0;
 transform:translateY(40px);
+
 transition:all 1s ease;
 }
 
 .show{
+
 opacity:1;
 transform:translateY(0);
 }
@@ -360,23 +438,33 @@ transform:translateY(0);
 RESPONSIVE
 ========================= */
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-.hero h1{
+.hero{
+
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-text p{
+
+margin:auto auto 40px;
+}
+
+.buttons{
+
+justify-content:center;
+}
+
+.hero-text h1{
+
 font-size:3rem;
 }
 
-nav{
-padding:15px 20px;
-}
-
 nav ul{
-gap:15px;
-font-size:0.9rem;
-}
 
-.hero-buttons{
-flex-direction:column;
+gap:18px;
+font-size:0.9rem;
 }
 
 }
@@ -388,20 +476,24 @@ flex-direction:column;
 <body>
 
 <canvas id="space"></canvas>
-
-<div class="overlay"></div>
+<div class="bg-overlay"></div>
 
 <!-- NAVBAR -->
 
 <nav>
 
-<div class="logo">ABHISHEK</div>
+<div class="logo">
+Abhishek Potdar
+</div>
 
 <ul>
+
 <li><a href="#about">About</a></li>
+<li><a href="#research">Research</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#timeline">Timeline</a></li>
+<li><a href="#publications">Publications</a></li>
 <li><a href="#contact">Contact</a></li>
+
 </ul>
 
 </nav>
@@ -410,21 +502,45 @@ flex-direction:column;
 
 <section class="hero">
 
-<h1>ABHISHEK POTDAR</h1>
+<div class="hero-text">
 
-<p class="typing">
+<h1>
+Abhishek Potdar
+</h1>
+
+<h2>
 Radio Astronomy • Solar Physics • RF Instrumentation
+</h2>
+
+<p>
+
+Researcher working in radio astronomy and solar physics,
+with interests in solar radio bursts, flare energetics,
+and development of radio astronomy instrumentation.
+
+Currently involved in development of automated radio
+telescope systems for neutral hydrogen observations
+at 1.42 GHz.
+
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
 <a href="#projects" class="btn primary">
-Explore Research
+Research Projects
 </a>
 
 <a href="CV.pdf" class="btn secondary">
 Download CV
 </a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="telescope.jpg" alt="Radio Telescope">
 
 </div>
 
@@ -434,28 +550,85 @@ Download CV
 
 <section id="about" class="hidden">
 
-<h2 class="section-title">About</h2>
+<h2 class="section-title">
+About
+</h2>
 
-<div class="card">
-
-<p>
-
-I am an Astronomy and Astrophysics researcher working in
-radio astronomy, solar physics, and RF instrumentation.
-
-My work focuses on solar radio bursts, flare energetics,
-and development of radio astronomy systems.
-
-</p>
-
-<br>
+<div class="about-box">
 
 <p>
 
-I developed a <b>3-meter automated radio telescope</b>
-operating at 1.42 GHz for neutral hydrogen observations.
+I am an Astronomy and Astrophysics researcher working
+primarily in radio astronomy, solar radio physics,
+and radio instrumentation.
+
+My current research focuses on understanding the temporal
+association between solar flares and radio bursts,
+particularly Type II and Type III bursts.
+
+I am also involved in development of radio astronomy
+instrumentation including feed systems, SDR-based receivers,
+bandpass filters, and automated telescope tracking systems.
 
 </p>
+
+</div>
+
+</section>
+
+<!-- RESEARCH -->
+
+<section id="research" class="hidden">
+
+<h2 class="section-title">
+Research Interests
+</h2>
+
+<div class="interests">
+
+<div class="interest-card">
+
+<h3>Solar Radio Bursts</h3>
+
+<p>
+Study of Type II and Type III radio bursts,
+dynamic spectra, and burst energetics.
+</p>
+
+</div>
+
+<div class="interest-card">
+
+<h3>Solar Flare Physics</h3>
+
+<p>
+Temporal association between X-ray flares,
+CMEs, and radio emissions.
+</p>
+
+</div>
+
+<div class="interest-card">
+
+<h3>Radio Instrumentation</h3>
+
+<p>
+Development of feedhorns, SDR receivers,
+and RF systems for radio astronomy.
+</p>
+
+</div>
+
+<div class="interest-card">
+
+<h3>21-cm HI Observations</h3>
+
+<p>
+Neutral hydrogen observations using
+automated radio telescope systems.
+</p>
+
+</div>
 
 </div>
 
@@ -465,46 +638,69 @@ operating at 1.42 GHz for neutral hydrogen observations.
 
 <section id="projects" class="hidden">
 
-<h2 class="section-title">Projects</h2>
+<h2 class="section-title">
+Research Projects
+</h2>
 
-<div class="grid">
+<div class="projects">
 
-<div class="card">
+<div class="project-card">
 
-<h3>3m Automated Radio Telescope</h3>
+<img src="project1.jpg">
+
+<div class="project-content">
+
+<h3>3-Meter Automated Radio Telescope</h3>
 
 <p>
 
-Design and development of a fully automated
-1.42 GHz radio telescope using SDR spectrometer.
+Design and development of an automated
+3-meter radio telescope operating at
+1.42 GHz for neutral hydrogen observations.
 
 </p>
 
 </div>
 
-<div class="card">
+</div>
+
+<div class="project-card">
+
+<img src="project2.jpg">
+
+<div class="project-content">
 
 <h3>Solar Radio Burst Analysis</h3>
 
 <p>
 
-Statistical analysis of Type II and Type III
-solar radio bursts and flare energetics.
+Statistical analysis of solar flare timing
+and radio burst associations using
+multi-instrument observations.
 
 </p>
 
 </div>
 
-<div class="card">
+</div>
 
-<h3>Feedhorn & RF Systems</h3>
+<div class="project-card">
+
+<img src="project3.jpg">
+
+<div class="project-content">
+
+<h3>Feedhorn & RF System Design</h3>
 
 <p>
 
-HFSS simulation and optimization of VE4MA
-feedhorns, choke rings, LNAs, and filters.
+HFSS simulation and optimization of
+feedhorns, choke-ring structures,
+filters, and RF signal chains.
 
 </p>
+
+</div>
 
 </div>
 
@@ -514,25 +710,82 @@ feedhorns, choke rings, LNAs, and filters.
 
 <!-- TIMELINE -->
 
-<section id="timeline" class="hidden">
+<section class="hidden">
 
-<h2 class="section-title">Research Journey</h2>
+<h2 class="section-title">
+Research Timeline
+</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
+
 <h3>2024</h3>
-<p>Started development of radio astronomy instrumentation.</p>
+
+<p>
+Started development of radio astronomy instrumentation
+and solar radio burst analysis.
+</p>
+
 </div>
 
 <div class="timeline-item">
+
 <h3>2025</h3>
-<p>Built 3-meter automated radio telescope at 1.42 GHz.</p>
+
+<p>
+Built and automated 3-meter radio telescope
+operating at 1.42 GHz.
+</p>
+
 </div>
 
 <div class="timeline-item">
+
 <h3>2026</h3>
-<p>Solar radio burst statistical analysis and publication work.</p>
+
+<p>
+Research on temporal correlation between
+solar flares and radio bursts.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PUBLICATIONS -->
+
+<section id="publications" class="hidden">
+
+<h2 class="section-title">
+Publications & Conferences
+</h2>
+
+<div class="pub-list">
+
+<div class="pub">
+
+<p>
+
+Abhishek Potdar et al.,
+<i>Temporal Association of Solar Flares and Radio Bursts</i>,
+Conference Presentation, 2026.
+
+</p>
+
+</div>
+
+<div class="pub">
+
+<p>
+
+Poster Presentation on Automated
+21-cm Radio Telescope Development.
+
+</p>
+
 </div>
 
 </div>
@@ -543,20 +796,28 @@ feedhorns, choke rings, LNAs, and filters.
 
 <section id="contact" class="hidden">
 
-<h2 class="section-title">Contact</h2>
+<div class="contact">
 
-<div class="contact-box">
+<h2 class="section-title">
+Contact
+</h2>
 
-<p>Email: your_email@example.com</p>
+<p>
+Email: your_email@example.com
+</p>
+
+<p>
+GitHub:
+<a href="https://github.com/Ab-03-Universe"
+style="color:#5cc8ff;">
+github.com/Ab-03-Universe
+</a>
+</p>
 
 <br>
 
-<a href="https://github.com/Ab-03-Universe"
-target="_blank"
-class="btn primary">
-
-GitHub
-
+<a href="CV.pdf" class="btn primary">
+Download CV
 </a>
 
 </div>
@@ -572,7 +833,7 @@ GitHub
 <script>
 
 /* =========================
-SPACE BACKGROUND
+STAR BACKGROUND
 ========================= */
 
 const canvas = document.getElementById('space');
@@ -590,16 +851,14 @@ canvas.height = window.innerHeight;
 
 const stars=[];
 
-for(let i=0;i<1200;i++){
+for(let i=0;i<900;i++){
 
 stars.push({
 
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
-
-size:Math.random()*2,
-
-speed:Math.random()*0.3
+size:Math.random()*1.8,
+speed:Math.random()*0.15
 
 });
 
@@ -640,9 +899,9 @@ animate();
 SCROLL REVEAL
 ========================= */
 
-const hiddenElements = document.querySelectorAll('.hidden');
+const hiddenElements=document.querySelectorAll('.hidden');
 
-const observer = new IntersectionObserver((entries)=>{
+const observer=new IntersectionObserver((entries)=>{
 
 entries.forEach(entry=>{
 
