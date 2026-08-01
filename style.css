@@ -448,3 +448,363 @@ font-size:1.35rem;
 font-family:'Space Grotesk',sans-serif;
 
 }
+
+/* =====================================================
+RESEARCH HIGHLIGHTS
+===================================================== */
+
+.stats-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.stat-card{
+
+background:var(--glass);
+
+padding:40px 25px;
+
+border-radius:24px;
+
+text-align:center;
+
+backdrop-filter:blur(15px);
+
+border:1px solid var(--border);
+
+transition:.4s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-10px);
+
+border-color:rgba(100,207,255,.35);
+
+box-shadow:var(--shadow);
+
+}
+
+.stat-card h2{
+
+font-size:3rem;
+
+font-family:'Space Grotesk',sans-serif;
+
+color:var(--primary);
+
+margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+color:var(--text);
+
+font-size:1rem;
+
+}
+
+/* =====================================================
+RESEARCH GRID
+===================================================== */
+
+.research-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+margin-top:60px;
+
+}
+
+.research-card{
+
+background:var(--glass);
+
+padding:35px;
+
+border-radius:25px;
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(16px);
+
+transition:.35s;
+
+}
+
+.research-card:hover{
+
+transform:translateY(-10px);
+
+border-color:rgba(100,207,255,.4);
+
+box-shadow:var(--shadow);
+
+}
+
+.research-card .icon{
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+}
+
+.research-card h3{
+
+font-size:1.45rem;
+
+margin-bottom:18px;
+
+color:var(--primary);
+
+font-family:'Space Grotesk',sans-serif;
+
+}
+
+.research-card p{
+
+color:var(--text);
+
+}
+
+/* =====================================================
+CURRENT RESEARCH
+===================================================== */
+
+.current-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+
+gap:35px;
+
+margin-top:50px;
+
+}
+
+.current-card{
+
+padding:40px;
+
+background:linear-gradient(145deg,
+
+rgba(255,255,255,.06),
+
+rgba(255,255,255,.03));
+
+border-radius:24px;
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(15px);
+
+transition:.4s;
+
+}
+
+.current-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:var(--shadow);
+
+}
+
+.current-card h3{
+
+color:var(--primary);
+
+font-size:1.6rem;
+
+margin-bottom:18px;
+
+}
+
+.current-card span{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+background:rgba(100,207,255,.12);
+
+color:var(--primary);
+
+font-size:.95rem;
+
+}
+
+/* =====================================================
+PROJECTS
+===================================================== */
+
+.project-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+gap:40px;
+
+margin-top:60px;
+
+}
+
+.project-card{
+
+background:rgba(255,255,255,.05);
+
+border-radius:25px;
+
+overflow:hidden;
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(16px);
+
+transition:.4s;
+
+}
+
+.project-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:var(--shadow);
+
+border-color:rgba(100,207,255,.35);
+
+}
+
+.project-card img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+transition:.4s;
+
+}
+
+.project-card:hover img{
+
+transform:scale(1.05);
+
+}
+
+.project-content{
+
+padding:30px;
+
+}
+
+.project-date{
+
+display:inline-block;
+
+background:rgba(100,207,255,.12);
+
+color:var(--primary);
+
+padding:8px 16px;
+
+border-radius:30px;
+
+font-size:.9rem;
+
+margin-bottom:20px;
+
+}
+
+.project-content h3{
+
+font-size:1.5rem;
+
+margin-bottom:18px;
+
+color:white;
+
+font-family:'Space Grotesk',sans-serif;
+
+}
+
+.project-content p{
+
+color:var(--text);
+
+margin-bottom:20px;
+
+}
+
+/* =====================================================
+TECH TAGS
+===================================================== */
+
+.tags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin:20px 0;
+
+}
+
+.tags span{
+
+padding:8px 16px;
+
+border-radius:30px;
+
+background:rgba(100,207,255,.10);
+
+color:var(--primary);
+
+font-size:.85rem;
+
+border:1px solid rgba(100,207,255,.2);
+
+transition:.3s;
+
+}
+
+.tags span:hover{
+
+background:var(--primary);
+
+color:#07111f;
+
+}
+
+.advisor{
+
+font-size:.95rem;
+
+color:#b8c9d8;
+
+margin-top:10px;
+
+}
